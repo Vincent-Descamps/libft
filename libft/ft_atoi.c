@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdescamp <vdescamp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 22:33:44 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/19 14:15:32 by vdescamp         ###   ########.fr       */
+/*   Created: 2021/10/19 15:12:02 by vdescamp          #+#    #+#             */
+/*   Updated: 2021/10/19 15:29:14 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int  ft_strlen(const char *s)
+int atoi(const char *str)
 {
-    int	i;
+    int i;
+    int nb;
+    int sign;
 
-	i = 0;
-	while (s[i] != '\0')
+    i = 0;
+    sign = 1;
+    nb = 0;
+    while (str[i] == ' ' || str[i] == '\f' || str[i] == '\n'
+		|| str[i] == '\r' || str[i] == '\t' || str[i] == '\v')
+		i++;
+	while (str[i] == '+' || str[i] == '-')
 	{
+		if (str[i] == '-')
+			sign *= -1;
 		i++;
 	}
-	return (i);
+	while (str[i] >= '0' || str[i] <= '9')
+	{
+			nb = (nb * 10) + (str[i] - '0');
+			i++;
+	}
+	nb *= sign;
+	return (nb);
 }

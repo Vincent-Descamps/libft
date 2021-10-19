@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vdescamp <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vdescamp <vdescamp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 12:16:41 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/19 12:42:43 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/19 15:39:04 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,12 @@
 
 void    ft_bzero(void *s, size_t n)
 {
-     
+        unsigned char *str;
+        str = s;
+        while(n > 0)
+        {
+            *str = '\0';
+            str++;
+            n--;
+        }
 }

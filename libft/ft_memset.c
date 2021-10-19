@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vdescamp <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vdescamp <vdescamp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 22:33:13 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/19 12:42:44 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/19 17:14:52 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,5 @@
 
  void   *ft_memset(void *b, int c, size_t len)
  {
-     char   *str;
-
-     str = b;
-        while (len)
-        {
-            *str = c;
-            str++;
-            len--;
-        }
-        return (b);
+     
  }
