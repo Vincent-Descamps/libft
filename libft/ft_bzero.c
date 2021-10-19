@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdescamp <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 22:33:13 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/19 12:42:44 by vdescamp         ###   ########.fr       */
+/*   Created: 2021/10/19 12:16:41 by vdescamp          #+#    #+#             */
+/*   Updated: 2021/10/19 12:42:43 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
- void   *ft_memset(void *b, int c, size_t len)
- {
-     char   *str;
-
-     str = b;
-        while (len)
-        {
-            *str = c;
-            str++;
-            len--;
-        }
-        return (b);
- }
+void    ft_bzero(void *s, size_t n)
+{
+     
+}
