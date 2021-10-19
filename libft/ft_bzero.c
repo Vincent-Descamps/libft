@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vdescamp <vdescamp@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 12:16:41 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/19 15:39:04 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/19 22:56:54 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void    ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-        unsigned char *str;
-        str = s;
-        while(n > 0)
-        {
-            *str = '\0';
-            str++;
-            n--;
-        }
+		unsigned char *str;
+		str = s;
+		while(n > 0)
+		{
+			*str = '\0';
+			str++;
+			n--;
+		}
 }

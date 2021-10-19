@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vdescamp <vdescamp@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 22:33:44 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/19 14:15:32 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/19 23:50:19 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-int  ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
-    int	i;
+	unsigned int	i;
 
 	i = 0;
+	if (!s)
+		return (0);
 	while (s[i] != '\0')
-	{
 		i++;
-	}
 	return (i);
 }
