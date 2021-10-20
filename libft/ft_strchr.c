@@ -6,16 +6,16 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 22:29:33 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/19 23:45:02 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/20 13:06:46 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
 	while (s[i])
@@ -31,5 +31,5 @@ char *ft_strchr(const char *s, int c)
 
 int	main(void)
 {
-	printf("%s",ft_strchr("bonjour je suis chez moi", 'x'));
+	printf("%s", ft_strchr("bonjour je suis chez moi", 'z'));
 }

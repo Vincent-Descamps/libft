@@ -6,15 +6,15 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 22:33:13 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/20 00:39:30 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/20 12:17:37 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
- void	*ft_memset(void *b, int c, size_t len)
- {
+void	*ft_memset(void *b, int c, size_t len)
+{
 	unsigned int	i;
 	unsigned char	*s;
 
@@ -27,13 +27,13 @@
 	}
 	b = (void *)s;
 	return (b);
- }
+}
 
- int	main(void)
- {
-	 char b[100] = "If it works i'll be very happy and go to sleep.";
-	 printf("\n Before : %s", b);
+int	main(void)
+{
+	char	b[100] = "If it works i'll be very happy and go to sleep.";
 
-	 ft_memset(b + 10, '@', 5*sizeof(char));
-	 printf("\n After : %s", b);
- }
+	printf("\n Before : %s", b);
+	ft_memset(b + 10, '@', 5 * sizeof(char));
+	printf("\n After : %s", b);
+}

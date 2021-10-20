@@ -6,11 +6,11 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 15:02:33 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/19 21:54:56 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/20 09:14:18 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int	c)
+int	ft_isprint(int c)
 {
 	return (c >= 32 && c != 127);
 }

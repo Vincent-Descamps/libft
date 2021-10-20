@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vdescamp <vdescamp@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:12:57 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/19 17:16:43 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/20 09:20:51 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c >= 'A' && c <= 'Z')
-        return (c += 32);
-    else
-        return (c);
+	if (c >= 'A' && c <= 'Z')
+		return (c += 32);
+	else
+		return (c);
 }

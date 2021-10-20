@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vdescamp <vdescamp@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:21:18 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/19 17:16:24 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/20 15:44:12 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    unsigned int	i;
+	size_t int	i;
 
 	i = 0;
 	if (n == 0)

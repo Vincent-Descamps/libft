@@ -6,12 +6,11 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 21:52:56 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/19 21:54:55 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/20 09:14:03 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int	ft_isdigit(int	i)
+int	ft_isdigit(int i)
 {
 	return (i >= '0' && i <= '9');
 }
