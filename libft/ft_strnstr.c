@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 15:00:28 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/20 17:25:29 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/20 22:55:45 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,36 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int	i;
-	int	j;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
-	if (needle[i] == '\0')
+	if (needle[0] == '\0')
 		return ((char*)haystack);
 	while (haystack[i] != '\0' && i < len)
 	{
-		j = 0;
-		while (haystack[i + j] == needle[j] && haystack[i + j] != '\0')
+		if (haystack[i] == needle[0])
 		{
-			if (needle[j + 1] == '\0')
-				return (needle[j]);
-			j++;
+			j = 0;
+			while (haystack[i + j] == needle[j] && i + j < len)
+			{
+				if (needle[j + 1] == '\0')
+					return ((char *)haystack + i);
+				j++;
+			}
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
-
-int	main(void)
+/*
+int     main()
 {
-	char	haystack[] = "ou est l'aiguille dans la botte de foin?";
-	char	needle[] = "dans";
-	char	*ptr;
-
-	ptr = ft_strnstr(haystack, needle, 4);
-	printf("%s", ptr);
+        const char *haystack = "ou est l'aiguille dans la botte de foin";
+        const char *needle = "dans";
+        char *ptr;
+        
+        ptr = ft_strnstr(haystack, needle, 22);
+        printf("%s", ptr);
 }
+*/
