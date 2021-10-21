@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 22:33:13 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/20 12:17:37 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/21 20:35:42 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	b = (void *)s;
 	return (b);
 }
-
+/*
 int	main(void)
 {
 	char	b[100] = "If it works i'll be very happy and go to sleep.";
@@ -37,3 +37,4 @@ int	main(void)
 	ft_memset(b + 10, '@', 5 * sizeof(char));
 	printf("\n After : %s", b);
 }
+*/

@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 22:41:59 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/20 23:59:49 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/21 21:57:39 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,11 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
-
+/*
 int	main(void)
 {
 	char *s = "bonjour je suis chez moi";
 	printf("%s\n", ft_strrchr(s, 's'));
 	printf("%zu", ft_strlen(s));
 }
+*/

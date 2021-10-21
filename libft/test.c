@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/21 19:38:38 by vdescamp          #+#    #+#             */
+/*   Updated: 2021/10/21 22:49:43 by vdescamp         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <string.h>
 #include <stdio.h>
 
 int	main(void)
 {
-	char *s1 = "bonjour";
-	char *s2 = "/lab8764";
+	char	str1[] = "123";
+	char	str2[] = "456789";
 
-	printf("%d", strncmp(s1, s2, 4));
+	printf("%zu", strlcat(str1, str2, 6));
 }

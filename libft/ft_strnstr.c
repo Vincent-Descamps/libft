@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 15:00:28 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/20 22:55:45 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/21 19:12:40 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	i = 0;
 	if (needle[0] == '\0')
-		return ((char*)haystack);
+		return ((char *)haystack);
 	while (haystack[i] != '\0' && i < len)
 	{
 		if (haystack[i] == needle[0])
@@ -42,7 +42,7 @@ int     main()
         const char *haystack = "ou est l'aiguille dans la botte de foin";
         const char *needle = "dans";
         char *ptr;
-        
+
         ptr = ft_strnstr(haystack, needle, 22);
         printf("%s", ptr);
 }
