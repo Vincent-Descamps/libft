@@ -6,11 +6,11 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 15:00:28 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/21 19:12:40 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/22 17:50:41 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -34,7 +34,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		}
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
 /*
 int     main()

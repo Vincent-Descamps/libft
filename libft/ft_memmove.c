@@ -6,12 +6,11 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 15:04:00 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/21 20:35:29 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/22 17:47:02 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

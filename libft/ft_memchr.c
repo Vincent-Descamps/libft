@@ -6,12 +6,11 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 20:36:53 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/21 21:12:51 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/22 17:45:04 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -20,7 +19,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (((unsigned char *)s)[i] == (unsigned char *)c)
+		if (((unsigned char *)s)[i] == (unsigned char)c)
 			return ((void *)(unsigned char *)s + i);
 		i++;
 	}

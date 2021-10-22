@@ -6,11 +6,11 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 22:33:44 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/21 00:00:24 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/22 17:49:45 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

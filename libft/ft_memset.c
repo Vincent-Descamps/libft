@@ -6,12 +6,11 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 22:33:13 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/21 20:35:42 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/22 17:48:33 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {

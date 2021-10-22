@@ -6,12 +6,11 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 22:29:33 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/20 23:22:07 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/22 17:43:49 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -26,8 +25,9 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (0);
 }
-
+/*
 int	main(void)
 {
 	printf("%s", ft_strchr("bonjour je suis chez moi", 's'));
 }
+*/

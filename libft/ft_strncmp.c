@@ -6,12 +6,11 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:21:18 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/21 20:36:00 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/22 17:50:25 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
