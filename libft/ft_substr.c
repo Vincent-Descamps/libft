@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 14:45:29 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/25 18:34:09 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/26 01:25:05 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,27 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
 	size_t	i;
+	size_t	j;
+	char	*str;
 
 	i = 0;
-	str = malloc(len + 1);
+	j = 0;
+	if (!s)
+		return (NULL);
+	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
-		return (0);
-	if (start >= ft_strlen(s))
-		return ("");
-	while (i < len)
+		return (NULL);
+	while (s[i])
 	{
-		str[i] = s[start + i];
+		if (i >= start && j < len)
+		{
+			str[j] = s[i];
+			j++;
+		}
 		i++;
 	}
-	str[i] = '\0';
+	str[j] = '\0';
 	return (str);
 }
 /*
