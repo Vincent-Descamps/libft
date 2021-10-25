@@ -5,40 +5,50 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/21 19:38:38 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/22 16:48:15 by vdescamp         ###   ########.fr       */
+/*   Created: 2021/10/25 11:45:47 by vdescamp          #+#    #+#             */
+/*   Updated: 2021/10/25 13:10:25 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-void    *ft_memmove(void *dest, const void *src, size_t len)
+int main()
 {
-    unsigned char *d;
-    unsigned char *s;
 
-    d = (unsigned char *)dest;
-    s = (unsigned char *)src;
-    if (dest == src)
-        return (dest);
-    if (s < d)
-    {
-        while(len--)
-            d[len] = s[len];
-        return (dest);
+    // This pointer will hold the
+    // base address of the block created
+    int* ptr;
+    int n, i;
+
+    // Get the number of elements for the array
+    n = 5;
+    printf("Enter number of elements: %d\n", n);
+
+    // Dynamically allocate memory using calloc()
+    ptr = (int*)ft_calloc(n, sizeof(int));
+
+    // Check if the memory has been successfully
+    // allocated by calloc or not
+    if (ptr == NULL) {
+        printf("Memory not allocated.\n");
+        exit(0);
     }
-    while (len--)
-        *d++ = *s++;
-    return (dest);
-}
-int	main(void)
-{
-	char	dst[] = "flip";
-	char	src[] = "********";
+    else {
 
-	printf("avant ft_memmove : %s\n", dst);
-	ft_memmove(dst, src, 4);
-	printf("apres ft_memmove : %s", dst);
-	return (0);
+        // Memory has been successfully allocated
+        printf("Memory successfully allocated using calloc.\n");
+
+        // Get the elements of the array
+        for (i = 0; i < n; ++i) {
+            ptr[i] = i + 1;
+        }
+
+        // Print the elements of the array
+        printf("The elements of the array are: ");
+        for (i = 0; i < n; ++i) {
+            printf("%d, ", ptr[i]);
+        }
+    }
+
+    return 0;
 }
