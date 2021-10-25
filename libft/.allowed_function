@@ -1,0 +1,30 @@
+# WHITELIST FOR ALLOWED FUNCTION IN .C FILE
+#
+# 1) For one file
+#
+# filename.c:printf
+#
+# 2) Everywhere
+#
+# *:printf
+#
+
+ft_calloc.c:malloc
+ft_strdup.c:malloc
+ft_substr.c:malloc
+ft_strjoin.c:malloc
+ft_split.c:malloc
+ft_itoa.c:malloc
+ft_strtrim.c:malloc
+ft_strmapi.c:malloc
+
+ft_putchar_fd.c:write
+ft_putstr_fd.c:write
+ft_putendl_fd.c:write
+ft_putnbr_fd.c:write
+
+#for me
+*:ft_strlen
+ft_strtrim.c:ft_strrchr
+ft_strtrim.c:ft_substr
+ft_strmapi.c:ft_strdup
