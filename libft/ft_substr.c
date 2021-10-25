@@ -1,40 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 17:17:39 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/25 16:14:03 by vdescamp         ###   ########.fr       */
+/*   Created: 2021/10/25 14:45:29 by vdescamp          #+#    #+#             */
+/*   Updated: 2021/10/25 18:34:09 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char	*str;
 	size_t	i;
-	size_t	j;
 
 	i = 0;
-	j = 0;
-	while (dst[i] != '\0' && i < dstsize)
+	str = malloc(len + 1);
+	if (!str)
+		return (0);
+	if (start >= ft_strlen(s))
+		return ("");
+	while (i < len)
+	{
+		str[i] = s[start + i];
 		i++;
-	while (src[j] != '\0' && i < dstsize - 1)
-		dst[i++] = src[j++];
-	if (dstsize != 0 && dstsize >= ft_strlen(dst))
-		dst[i] = '\0';
-	if (dstsize > ft_strlen(dst))
-		return (ft_strlen(dst) + ft_strlen(src));
-	return (dstsize + ft_strlen(src));
+	}
+	str[i] = '\0';
+	return (str);
 }
-
+/*
 int	main(void)
 {
-	char	str1[] = "123456";
-	char	str2[] = "789";
+	char	str[] = "Salut les potos";
+	unsigned	int start = 1;
+	size_t	len = 3;
 
-	printf("%zu", ft_strlcat(str1, str2, 3));
+	//printf("%s\n", str);
+	printf("%s", ft_substr(str, start, len));
 }
-
+*/
