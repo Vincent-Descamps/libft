@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 13:25:57 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/25 13:59:35 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/26 14:19:36 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strdup(const char *s1)
 	int		i;
 	char	*tab;
 
-	tab = malloc(sizeof(char) * ft_strlen(s1));
+	tab = malloc(sizeof(char) * (ft_strlen(s1) + 1));
 	if (!tab)
 		return (NULL);
 	i = 0;

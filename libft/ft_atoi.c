@@ -6,15 +6,15 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 15:12:02 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/26 01:18:30 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/26 14:14:11 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char *str)
 {
 	unsigned int	i;
-	int				nb;
-	int				sign;
+	long int		nb;
+	long int		sign;
 
 	i = 0;
 	sign = 1;
@@ -28,7 +28,7 @@ int	ft_atoi(const char *str)
 			sign = -1;
 		i++;
 	}
-	while (str[i] >= '0' || str[i] <= '9')
+	while ('0' <= str[i] && str[i] <= '9')
 	{
 		nb = (nb * 10) + (str[i] - '0');
 		i++;

@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 17:19:10 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/25 14:57:50 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/26 11:07:30 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 //Fonctions void
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void	*dst, const void *src, size_t n);
