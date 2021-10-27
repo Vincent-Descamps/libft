@@ -1,48 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   trimbis.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/26 22:59:14 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/27 17:50:18 by vdescamp         ###   ########.fr       */
+/*   Created: 2021/10/27 17:17:45 by vdescamp          #+#    #+#             */
+/*   Updated: 2021/10/27 17:18:08 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*
+char	check(char c, char const *set)
+{
+	int	i;
+
+	i = 0;
+	while (set[i])
+		if (set[i++] == c)
+			return (0);
+	return (1);
+}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*start;
-	char	*end;
+	size_t	start;
+	size_t	end;
+	size_t	i;
 	char	*s1_cpy;
 
-	start = (char *)s1;
-	while (*start && ft_strchr(set, *start))
+	start = 0;
+	while (s1[start] && check(s1[start], set))
 		start++;
-	if (!(start))
-		return (ft_strdup(""));
-	end = (char *)s1;
-	while (*end)
-		end++;
-	while (ft_strchr(set, *end))
+	end = ft_strlen(s1);
+	while (end > start && check(s1[end - 1], set))
 		end--;
-	while (start >= end)
-		return (ft_strdup(""));
-	s1_cpy = (char *)malloc((end - start + 1) + 1);
+	s1_cpy = (char *)malloc((sizeof(char)) * (end - start + 1));
 	if (!s1_cpy)
 		return (0);
-	ft_strlcpy(s1_cpy, start, ((end - start) + 1) + 1);
+	i = 0;
+	s1_cpy[i++] = s1[start++];
+	s1_cpy[i] = '\0';
 	return (s1_cpy);
-}
-/*
-int	main(void)
-{
-	char	s1[] = "	Jusqu'ici tout va bien.		";
-	char	*set;
-	set = "	";
-
-	printf("%s", ft_strtrim(s1, set));
 }
 */
