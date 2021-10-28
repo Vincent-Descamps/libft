@@ -6,7 +6,7 @@
 #    By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/22 09:44:36 by vdescamp          #+#    #+#              #
-#    Updated: 2021/10/28 14:59:35 by vdescamp         ###   ########.fr        #
+#    Updated: 2021/10/28 23:59:26 by vdescamp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,8 +41,12 @@ SRCS =	ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c \
 		ft_strtrim.c \
-		ft_split.c \
 		ft_itoa.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c \
+		ft_split.c \
 
 OBJ = $(SRCS:.c=.o)
 RM = rm -f

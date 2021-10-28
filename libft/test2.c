@@ -12,51 +12,104 @@
 
 #include "libft.h"
 
-int	ft_word_count(char const *s, char c)
+char				**ft_clear_splitted(char **tab)
 {
-	int	i;
-	int	cnt;
+	unsigned int	i;
 
 	i = 0;
-	cnt = 0;
-	while (s[i])
+	while (tab[i])
 	{
-		if (s[i] == c)
-			i++;
-		else
-		{
-			cnt++;
-			while (s[i] && s[i] != c)
-				i++;
-		}
+		free(tab[i]);
+		i++;
 	}
-	return (cnt);
+	free(tab);
+	return (NULL);
 }
 
-char	**ft_split(char const *s, char c)
+static unsigned int	ft_get_nb_strs(char const *s, const char *delimiters)
 {
-	size_t	i;
-	size_t	j;
-	int		index;
-	char	**split;
+	unsigned int	i;
+	unsigned int	nb_strs;
 
-	split = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!s || !split)
+	if (!s[0])
 		return (0);
 	i = 0;
-	j = 0;
-	index = -1;
-	while (i <= ft_strlen(s))
+	nb_strs = 0;
+	while (s[i] && ft_strchr(delimiters, s[i]))
+		i++;
+	while (s[i])
 	{
-		if (s[i] != c && index < 0)
-			index = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
+		if (ft_strchr(delimiters, s[i]))
 		{
-			split[j++] = ft_substr(s, index, i);
-			index = -1;
+			nb_strs++;
+			while (s[i] && ft_strchr(delimiters, s[i]))
+				i++;
+			continue ;
 		}
 		i++;
 	}
-	split[j] = 0;
-	return (split);
+	if (!ft_strchr(delimiters, s[i - 1]))
+		nb_strs++;
+	return (nb_strs);
 }
+
+static void			ft_get_next_str(char **next_str, unsigned int *next_str_len,
+					const char *delimiters)
+{
+	unsigned int i;
+
+	*next_str += *next_str_len;
+	*next_str_len = 0;
+	i = 0;
+	while (**next_str && ft_strchr(delimiters, **next_str))
+		(*next_str)++;
+	while ((*next_str)[i])
+	{
+		if (ft_strchr(delimiters, (*next_str)[i]))
+			return ;
+		(*next_str_len)++;
+		i++;
+	}
+}
+
+char				**ft_split(char const *s, const char *delimiters)
+{
+	char			**tab;
+	char			*next_str;
+	unsigned int	next_str_len;
+	unsigned int	nb_strs;
+	unsigned int	i;
+
+	nb_strs = ft_get_nb_strs(s, delimiters);
+	if (!(tab = malloc(sizeof(char *) * (nb_strs + 1))))
+		return (NULL);
+	i = 0;
+	next_str = (char *)s;
+	next_str_len = 0;
+	while (i < nb_strs)
+	{
+		ft_get_next_str(&next_str, &next_str_len, delimiters);
+		if (!(tab[i] = malloc(sizeof(char) * (next_str_len + 1))))
+			return (ft_clear_splitted(tab));
+		ft_strlcpy(tab[i], next_str, next_str_len + 1);
+		i++;
+	}
+	tab[i] = NULL;
+	return (tab);
+}
+
+int				main(void)
+{	char	**tab;
+**	unsigned int	i;
+**
+**	i = 0;
+**	tab = ft_split(", hello, sp    lit ,,,,  th,,,is,plz, , ", ", ");
+**	if (!tab[0])
+**		ft_putendl_fd("ok\n", 1);
+**	while (tab[i] != NULL)
+**	{
+**		ft_putendl_fd(tab[i], 1);
+**		i++;
+**	}
+**}
+

@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/27 17:52:05 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/29 00:08:32 by vdescamp         ###   ########.fr       */
+/*   Created: 2021/10/28 22:28:20 by vdescamp          #+#    #+#             */
+/*   Updated: 2021/10/28 23:06:44 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-int main(void)
+void	ft_putchar_fd(char c, int fd)
 {
-  char *s = "AB CDEF GHI";
-  char c = ' ';
-
-  printf("%s", ft_split(s, c));
-  return (0);
+	write(fd, &c, 1);
 }
-*/
