@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 22:59:14 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/27 20:55:02 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/28 09:53:18 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int	main(void)
 	char	s1[] = "zzjbjbzzzjkbjzzz";
 	char	*set;
 	set = "z";
-
 	printf("%s", ft_strtrim(s1, set));
 }
 */

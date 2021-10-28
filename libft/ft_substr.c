@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 14:45:29 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/26 18:45:04 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/28 11:43:17 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,33 +15,28 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
-	size_t	j;
 	char	*str;
 
-	i = 0;
-	j = 0;
 	if (!s)
 		return (NULL);
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	while (s[i])
+	i = 0;
+	while (s[i] != '\0' && i < len)
 	{
-		if (i >= start && j < len)
-		{
-			str[j] = s[i];
-			j++;
-		}
-		i++;
+		str[i++] = s[start++];
 	}
-	str[j] = '\0';
+	str[i] = '\0';
 	return (str);
 }
 /*
 int	main(void)
 {
 	char	str[] = "Salut les potos";
-	unsigned	int start = 1;
+	unsigned	int start = 6;
 	size_t	len = 3;
 
 	//printf("%s\n", str);
