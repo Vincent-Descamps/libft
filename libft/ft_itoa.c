@@ -6,22 +6,27 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 09:54:16 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/28 13:34:18 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/28 19:33:39 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int    count_digit(int n)
+int	count_digit(int n)
 {
-	int    count;
+	int			count;
+	long int	i;
 
+	i = n;
 	count = 1;
-	if (n < 0)
-		n *= -1;
-	while (n > 9)
+	if (i < 0)
 	{
-		n /= 10;
+		i *= -1;
+		count++;
+	}
+	while (i > 9)
+	{
+		i /= 10;
 		count++;
 	}
 	return (count);
@@ -29,31 +34,35 @@ int    count_digit(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	int		i;
-	int		str_len;
+	char		*str;
+	int			i;
+	int			str_len;
+	long int	nbr;
 
+	nbr = n;
 	str_len = count_digit(n);
 	str = malloc(sizeof(char) * (str_len + 1));
 	if (!str)
 		return (NULL);
-	i = str_len - 1;
-	if (n < 0)
+	if (nbr < 0)
 	{
-		n *= -1;
-		str = malloc(sizeof(char) * (str_len + 2));
 		str[0] = '-';
-		i = str_len;
+		nbr *= -1;
 	}
-	while (i >= 0)
+	i = str_len - 1;
+	if (nbr == 0)
+		str[0] = '0';
+	if (nbr < 10)
+		str[0] = nbr + '0';
+	while (i >= 0 && nbr != 0)
 	{
-		str[i] = (n % 10) + '0';
-		n = n / 10;
-		i--;
+		str[i--] = (nbr % 10) + '0';
+		nbr = nbr / 10;
 	}
 	str[str_len] = '\0';
+	return (str);
 }
-
+/*
 int	main(void)
 {
 	int	n;
@@ -62,3 +71,4 @@ int	main(void)
 	ft_itoa(n);
 	return (0);
 }
+*/
