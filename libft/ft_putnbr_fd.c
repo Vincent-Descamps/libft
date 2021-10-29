@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 23:30:09 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/28 23:50:26 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/29 13:35:05 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,25 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	str;
+	char		str;
+	long int	nb;
 
-	if (n == -2147483648)
+	nb = n;
+	if (nb == -2147483648)
 	{
-		write(fd, "-2147483648", 11);
+		write(fd, "-2147483648", 12);
 	}
 	else if (n < 0)
 	{
 		write(fd, "-", 1);
 		n *= -1;
 	}
-	else if (n > 9)
+	else if (nb > 9)
 	{
-		ft_putchar_fd(n / 10, fd);
-		str = n % 10 + '0';
+		ft_putnbr_fd(nb / 10, fd);
+		str = nb % 10 + '0';
 	}
 	else
-		str = n + '0';
+		str = nb + '0';
+	write(fd, &str, 1);
 }

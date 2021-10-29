@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 17:19:10 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/28 23:59:30 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/10/29 11:47:58 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
-char	**ft_split(char const *s, char c);
+//char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 //Fonctions void
