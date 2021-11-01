@@ -6,7 +6,7 @@
 #    By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/22 09:44:36 by vdescamp          #+#    #+#              #
-#    Updated: 2021/11/01 17:36:31 by vdescamp         ###   ########.fr        #
+#    Updated: 2021/11/01 22:43:33 by vdescamp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ BONUSRC =	ft_lstnew.c \
 			ft_lstlast.c \
 			ft_lstadd_back.c \
 			ft_lstdelone.c \
-			#ft_lstclear.c \
+			ft_lstclear.c \
 
 OBJ = $(SRCS:.c=.o)
 
