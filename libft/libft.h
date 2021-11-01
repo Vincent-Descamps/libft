@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 17:19:10 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/30 16:04:30 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/11/01 17:23:11 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 # include <string.h>
 # include <stdlib.h>
 # include <ctype.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;;
 //fonctions int
 int		ft_atoi(const char *str);
 int		ft_tolower(int c);
@@ -29,6 +35,7 @@ int		ft_isdigit(int i);
 int		ft_isprint(int c);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_lstsize(t_list *lst);
 //Fonctions char
 char	*ft_strchr(const char *s, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
@@ -52,9 +59,16 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_lstadd_front(t_list **alst, t_list *new);
+void	ft_lstadd_back(t_list **alst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
 //Fonctions size_t
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);
+//Fonctions t_list
+t_list	*ft_lstnew(void *content);
+t_list	*ft_lstlast(t_list *lst);
 
 #endif

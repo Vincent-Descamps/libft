@@ -6,7 +6,7 @@
 #    By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/22 09:44:36 by vdescamp          #+#    #+#              #
-#    Updated: 2021/10/30 17:20:02 by vdescamp         ###   ########.fr        #
+#    Updated: 2021/11/01 17:36:31 by vdescamp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,8 @@ NAME = libft.a
 CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
+
+
 SRCS =	ft_atoi.c \
 		ft_bzero.c \
 		ft_calloc.c \
@@ -50,7 +52,18 @@ SRCS =	ft_atoi.c \
 		ft_strmapi.c \
 		ft_striteri.c \
 
+BONUSRC =	ft_lstnew.c \
+			ft_lstadd_front.c \
+			ft_lstsize.c \
+			ft_lstlast.c \
+			ft_lstadd_back.c \
+			ft_lstdelone.c \
+			#ft_lstclear.c \
+
 OBJ = $(SRCS:.c=.o)
+
+BONUS_OBJ = $(BONUSRC:.c=.o)
+
 RM = rm -f
 
 .c.o:
@@ -61,6 +74,9 @@ ${NAME} : ${OBJ}
 		ranlib ${NAME}
 
 all : ${NAME}
+
+bonus : ${OBJ} ${BONUS_OBJ}
+		ar rcs ${NAME} ${OBJ} ${BONUS_OBJ}
 
 clean :
 		${RM} ${OBJ}

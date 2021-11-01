@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 09:54:16 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/29 14:14:16 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/11/01 10:56:21 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,13 @@ int	count_digit(int n)
 	return (count);
 }
 
+char	*str_size(int str_len)
+{
+	return (malloc(sizeof(char) * (str_len + 1)));
+	if (!(malloc(sizeof(char) * (str_len + 1))))
+		return (0);
+}
+
 char	*ft_itoa(int n)
 {
 	char		*str;
@@ -41,7 +48,7 @@ char	*ft_itoa(int n)
 
 	nbr = n;
 	str_len = count_digit(n);
-	str = malloc(sizeof(char) * (str_len + 1));
+	str = str_size(str_len);
 	if (nbr < 0)
 	{
 		str[0] = '-';
