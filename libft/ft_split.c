@@ -6,13 +6,13 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 17:52:05 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/30 17:20:29 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/11/02 21:38:12 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_strs(char const *s, char c)
+static int	count_strs(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -35,7 +35,7 @@ int	count_strs(char const *s, char c)
 	return (count);
 }
 
-char	put_str(char const *s, char *sub_str, int j, int str_len)
+static char	put_str(char const *s, char *sub_str, int j, int str_len)
 {
 	int	i;
 
@@ -50,7 +50,7 @@ char	put_str(char const *s, char *sub_str, int j, int str_len)
 	return (*sub_str);
 }
 
-char	**find_str(char const *s, char c, char **main_str, int str_num)
+static char	**find_str(char const *s, char c, char **main_str, int str_num)
 {
 	int	i;
 	int	j;
@@ -84,6 +84,8 @@ char	**ft_split(char const *s, char c)
 	int		str_num;
 	char	**main_str;
 
+	if (!s)
+		return (NULL);
 	str_num = count_strs(s, c);
 	main_str = (char **)malloc(sizeof(char *) * (str_num + 1));
 	if (!main_str)
@@ -99,8 +101,8 @@ int	main(void)
 	char				**tab;
 	unsigned int		i;
 
-	s = "aa bbb aaa  bb  a ";
-	c = ' ';
+	s = "aa_bbb_aaa _bb __a ";
+	c = '_';
 	i = 0;
 	tab = ft_split(s, c);
 	while (tab[i] != 0)

@@ -6,7 +6,7 @@
 #    By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/22 09:44:36 by vdescamp          #+#    #+#              #
-#    Updated: 2021/11/01 22:43:33 by vdescamp         ###   ########.fr        #
+#    Updated: 2021/11/02 21:14:06 by vdescamp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,8 @@ BONUSRC =	ft_lstnew.c \
 			ft_lstadd_back.c \
 			ft_lstdelone.c \
 			ft_lstclear.c \
+			ft_lstiter.c \
+
 
 OBJ = $(SRCS:.c=.o)
 
@@ -70,8 +72,7 @@ RM = rm -f
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME} : ${OBJ}
-		ar rc ${NAME} ${OBJ}
-		ranlib ${NAME}
+		ar rcs ${NAME} ${OBJ}
 
 all : ${NAME}
 
@@ -79,11 +80,11 @@ bonus : ${OBJ} ${BONUS_OBJ}
 		ar rcs ${NAME} ${OBJ} ${BONUS_OBJ}
 
 clean :
-		${RM} ${OBJ}
+		${RM} ${OBJ} ${BONUS_OBJ}
 
 fclean : clean
 		${RM} ${NAME}
 
 re : fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

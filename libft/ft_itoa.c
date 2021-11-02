@@ -6,13 +6,13 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 09:54:16 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/11/01 10:56:21 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/11/02 17:24:20 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_digit(int n)
+static int	count_digit(int n)
 {
 	int			count;
 	long int	i;
@@ -32,11 +32,10 @@ int	count_digit(int n)
 	return (count);
 }
 
-char	*str_size(int str_len)
+static char	*str_size(int str_len)
 {
 	return (malloc(sizeof(char) * (str_len + 1)));
-	if (!(malloc(sizeof(char) * (str_len + 1))))
-		return (0);
+	return (0);
 }
 
 char	*ft_itoa(int n)
