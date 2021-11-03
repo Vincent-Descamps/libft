@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 17:21:25 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/11/02 12:45:19 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/11/03 17:33:25 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*elem;
 
 	elem = *lst;
+	if (!lst || !del)
+		return ;
 	while (elem != NULL)
 	{
 		*lst = elem->next;

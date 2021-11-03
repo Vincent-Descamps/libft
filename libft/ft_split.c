@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 17:52:05 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/11/02 21:38:12 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/11/03 15:25:48 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ char	**ft_split(char const *s, char c)
 	char	**main_str;
 
 	if (!s)
-		return (NULL);
+		return (0);
 	str_num = count_strs(s, c);
 	main_str = (char **)malloc(sizeof(char *) * (str_num + 1));
 	if (!main_str)
@@ -101,8 +101,8 @@ int	main(void)
 	char				**tab;
 	unsigned int		i;
 
-	s = "aa_bbb_aaa _bb __a ";
-	c = '_';
+	s = "aa bbb aaa  bb  a ";
+	c = ' ';
 	i = 0;
 	tab = ft_split(s, c);
 	while (tab[i] != 0)

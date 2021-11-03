@@ -6,7 +6,7 @@
 #    By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/22 09:44:36 by vdescamp          #+#    #+#              #
-#    Updated: 2021/11/02 21:14:06 by vdescamp         ###   ########.fr        #
+#    Updated: 2021/11/03 19:41:59 by vdescamp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ SRCS =	ft_atoi.c \
 		ft_strmapi.c \
 		ft_striteri.c \
 
-BONUSRC =	ft_lstnew.c \
+BONUSRCS =	ft_lstnew.c \
 			ft_lstadd_front.c \
 			ft_lstsize.c \
 			ft_lstlast.c \
@@ -60,13 +60,18 @@ BONUSRC =	ft_lstnew.c \
 			ft_lstdelone.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
+			ft_lstmap.c \
 
 
 OBJ = $(SRCS:.c=.o)
 
-BONUS_OBJ = $(BONUSRC:.c=.o)
+BONUS_OBJ = $(BONUSRCS:.c=.o)
 
 RM = rm -f
+
+ifdef WITH_BONUS
+	OBJ = ${SRCS:.c=.o} ${BONUSRCS:.c=.o}
+endif
 
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
@@ -76,8 +81,8 @@ ${NAME} : ${OBJ}
 
 all : ${NAME}
 
-bonus : ${OBJ} ${BONUS_OBJ}
-		ar rcs ${NAME} ${OBJ} ${BONUS_OBJ}
+bonus : ${BONUS_OBJ}
+		ar rcs ${NAME} ${BONUS_OBJ}
 
 clean :
 		${RM} ${OBJ} ${BONUS_OBJ}

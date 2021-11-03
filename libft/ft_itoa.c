@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 09:54:16 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/11/02 17:24:20 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/11/03 16:46:12 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ char	*ft_itoa(int n)
 	i = str_len - 1;
 	if (nbr == 0)
 		str[0] = '0';
-	if (nbr < 10)
-		str[0] = nbr + '0';
+	if (nbr < 10 && str[0] != '-')
+		str[1] = nbr + '0';
 	while (i >= 0 && nbr != 0)
 	{
 		str[i--] = (nbr % 10) + '0';
@@ -71,8 +71,9 @@ int	main(void)
 {
 	int	n;
 
-	n = -123;
-	ft_itoa(n);
+	n = -9;
+
+	printf("%s", ft_itoa(n));
 	return (0);
 }
 */

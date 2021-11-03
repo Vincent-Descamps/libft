@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 17:19:10 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/11/02 21:12:37 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/11/03 15:53:43 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,6 @@ size_t	ft_strlen(const char *s);
 //Fonctions t_list
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
-//t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
