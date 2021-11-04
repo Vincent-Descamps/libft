@@ -6,18 +6,12 @@
 #    By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/22 09:44:36 by vdescamp          #+#    #+#              #
-#    Updated: 2021/11/03 21:02:06 by vdescamp         ###   ########.fr        #
+#    Updated: 2021/11/03 23:34:28 by vdescamp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
 
-CC = gcc
-
-CFLAGS = -Wall -Werror -Wextra
-
-
-SRCS =	ft_atoi.c \
+SRCS = ft_atoi.c \
 		ft_bzero.c \
 		ft_calloc.c \
 		ft_isalnum.c \
@@ -52,44 +46,48 @@ SRCS =	ft_atoi.c \
 		ft_strmapi.c \
 		ft_striteri.c \
 
-BONUSRCS =	ft_lstnew.c \
-			ft_lstadd_front.c \
-			ft_lstsize.c \
-			ft_lstlast.c \
-			ft_lstadd_back.c \
-			ft_lstdelone.c \
-			ft_lstclear.c \
-			ft_lstiter.c \
-			ft_lstmap.c \
+SRCSBONUS =	ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
 
+NAME = libft.a
 
-OBJ = $(SRCS:.c=.o)
+OBJS = ${SRCS:.c=.o}
 
-BONUS_OBJ = $(BONUSRCS:.c=.o)
+OBJSBONUS = ${SRCSBONUS:.c=.o}
+
+CC = gcc
 
 RM = rm -f
 
-ifdef WITH_BONUS
-	OBJ = ${SRCS:.c=.o} ${BONUSRCS:.c=.o}
-endif
+CFLAGS = -Wall -Werror -Wextra
 
 .c.o:
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+	${CC) ${CFLAGS} -c $< -o ${<:.c=.o}
 
-${NAME} : ${OBJ}
-		ar rcs ${NAME} ${OBJ}
+${NAME}: ${OBJS}
+	ar rc ${NAME} ${OBJS}
+	ran lib ${NAME}
 
-all : ${NAME}
+bonus:
+	${OBJSBONUS}
+	ar rc ${NAME} ${OBJSBONUS}
+	ran lib ${NAME}
+all:
+	${NAME}
 
-bonus : ${BONUS_OBJ}
-		ar rcs ${NAME} ${BONUS_OBJ}
+clean:
+	${RM} ${OBJS} ${OBJSBONUS}
 
-clean :
-		${RM} ${OBJ} ${BONUS_OBJ}
-
-fclean : clean
+fclean: clean
 		${RM} ${NAME}
 
-re : fclean all
+re: fclean all
 
 .PHONY: all clean fclean re bonus
