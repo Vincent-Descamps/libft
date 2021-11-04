@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 18:02:41 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/11/03 20:31:10 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/11/04 14:28:48 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,10 @@
 
 void	*ft_memcpy(void	*dst, const void *src, size_t n)
 {
-	char	*dest;
-
-	dest = dst;
 	if (n == 0)
 		return (dst);
 	if (!src && !dst)
-		return (0);
+		return (NULL);
 	while (n > 0)
 	{
 		(*(unsigned char *)dst++) = (*(unsigned char *)src++);
