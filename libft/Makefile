@@ -6,7 +6,7 @@
 #    By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/22 09:44:36 by vdescamp          #+#    #+#              #
-#    Updated: 2021/11/03 21:02:06 by vdescamp         ###   ########.fr        #
+#    Updated: 2021/11/04 09:36:09 by vdescamp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,10 +68,6 @@ OBJ = $(SRCS:.c=.o)
 BONUS_OBJ = $(BONUSRCS:.c=.o)
 
 RM = rm -f
-
-ifdef WITH_BONUS
-	OBJ = ${SRCS:.c=.o} ${BONUSRCS:.c=.o}
-endif
 
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}

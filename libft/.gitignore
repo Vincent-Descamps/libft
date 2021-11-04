@@ -1,9 +1,0 @@
-*.o
-*.a
-*.out
-gitignore
-test.c
-test2.c
-libftTester
-libfttestterJoe
-FT_SPLIT_TESTER
