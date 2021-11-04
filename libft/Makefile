@@ -6,7 +6,11 @@
 #    By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/22 09:44:36 by vdescamp          #+#    #+#              #
+<<<<<<< HEAD
 #    Updated: 2021/11/03 23:34:28 by vdescamp         ###   ########.fr        #
+=======
+#    Updated: 2021/11/04 09:36:09 by vdescamp         ###   ########.fr        #
+>>>>>>> e9840a669bea24c4915d46160363a7bb61c143f4
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,8 +70,11 @@ CC = gcc
 
 RM = rm -f
 
+<<<<<<< HEAD
 CFLAGS = -Wall -Werror -Wextra
 
+=======
+>>>>>>> e9840a669bea24c4915d46160363a7bb61c143f4
 .c.o:
 	${CC) ${CFLAGS} -c $< -o ${<:.c=.o}
 
