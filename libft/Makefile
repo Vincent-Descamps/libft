@@ -6,14 +6,11 @@
 #    By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/22 09:44:36 by vdescamp          #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2021/11/03 23:34:28 by vdescamp         ###   ########.fr        #
-=======
-#    Updated: 2021/11/04 09:36:09 by vdescamp         ###   ########.fr        #
->>>>>>> e9840a669bea24c4915d46160363a7bb61c143f4
+#    Updated: 2021/11/04 20:17:16 by vdescamp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = libft.a
 
 SRCS = ft_atoi.c \
 		ft_bzero.c \
@@ -60,41 +57,37 @@ SRCSBONUS =	ft_lstnew.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
 
-NAME = libft.a
 
 OBJS = ${SRCS:.c=.o}
 
-OBJSBONUS = ${SRCSBONUS:.c=.o}
+OBJSBONUS = $(SRCSBONUS:.c=.o)
+
+NAME = libft.a
 
 CC = gcc
 
 RM = rm -f
 
-<<<<<<< HEAD
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Wextra -Werror
 
-=======
->>>>>>> e9840a669bea24c4915d46160363a7bb61c143f4
 .c.o:
-	${CC) ${CFLAGS} -c $< -o ${<:.c=.o}
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}: ${OBJS}
 	ar rc ${NAME} ${OBJS}
-	ran lib ${NAME}
+	ranlib ${NAME}
 
-bonus:
-	${OBJSBONUS}
-	ar rc ${NAME} ${OBJSBONUS}
-	ran lib ${NAME}
-all:
-	${NAME}
+bonus:    $(OBJSBONUS)
+		ar rc $(NAME) $(OBJSBONUS)
+
+all: ${NAME}
 
 clean:
-	${RM} ${OBJS} ${OBJSBONUS}
+	${RM} ${OBJS} $(OBJSBONUS)
 
 fclean: clean
-		${RM} ${NAME}
+	${RM} ${NAME}
 
-re: fclean all
+re : fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

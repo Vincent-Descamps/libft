@@ -6,7 +6,7 @@
 /*   By: vdescamp <vdescamp@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 23:30:09 by vdescamp          #+#    #+#             */
-/*   Updated: 2021/10/30 14:32:54 by vdescamp         ###   ########.fr       */
+/*   Updated: 2021/11/04 19:53:45 by vdescamp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,6 @@ void	ft_putnbr_fd(int n, int fd)
 	long int	nb;
 
 	nb = n;
-	if (nb == -2147483648)
-	{
-		write(fd, "-2147483648", 12);
-	}
 	if (n < 0)
 	{
 		write(fd, "-", 1);
